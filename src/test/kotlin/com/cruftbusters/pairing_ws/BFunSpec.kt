@@ -15,25 +15,33 @@ import io.ktor.server.netty.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withTimeout
 import com.cruftbusters.ktor_baseurl_util.setBaseUrl
+import io.ktor.client.features.websocket.*
 
-abstract class BFunSpec(val body: FunSpec.(HttpClient) -> Unit) : FunSpec({
+abstract class BFunSpec(val body: FunSpec.() -> Unit) : FunSpec({
   register(ServerStart)
-  body(this, httpClient)
+  body(this)
 }) {
   companion object {
     private const val embeddedServerBaseUrl = "http://localhost:8080"
+    private val baseUrl = (System.getProperty("baseUrl") ?: embeddedServerBaseUrl)
+      .ifBlank { embeddedServerBaseUrl }
 
-    private val baseUrl = System.getProperty("baseUrl").ifBlank { embeddedServerBaseUrl }
+    private const val embeddedServerWsBaseUrl = "ws://localhost:8080"
+    private val wsBaseUrl = (System.getProperty("wsBaseUrl") ?: embeddedServerWsBaseUrl)
+      .ifBlank { embeddedServerWsBaseUrl }
 
     private var started = false
 
     private val server = embeddedServer(Netty, port = 8080) { module() }
 
     val httpClient = HttpClient {
-      defaultRequest {
-        setBaseUrl(baseUrl)
-      }
+      defaultRequest { setBaseUrl(baseUrl) }
       install(JsonFeature)
+    }
+
+    val wsClient = HttpClient {
+      defaultRequest { setBaseUrl(wsBaseUrl) }
+      install(WebSockets)
     }
 
     object ServerStart : io.kotest.core.listeners.TestListener {

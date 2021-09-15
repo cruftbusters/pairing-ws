@@ -8,7 +8,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 
-class VersionBTest : BFunSpec({ httpClient ->
+class VersionBTest : BFunSpec({
   test("get /version returns version") {
     httpClient.get<HttpResponse>("/version").apply {
       status shouldBe HttpStatusCode.OK

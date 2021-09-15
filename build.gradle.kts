@@ -22,10 +22,12 @@ repositories {
 
 dependencies {
   implementation("ch.qos.logback:logback-classic:+")
+  implementation("io.ktor:ktor-client-websockets:+")
   implementation("io.ktor:ktor-jackson:+")
   implementation("io.ktor:ktor-serialization:+")
   implementation("io.ktor:ktor-server-core:+")
   implementation("io.ktor:ktor-server-netty:+")
+  implementation("io.ktor:ktor-websockets:+")
   testImplementation("com.cruftbusters:ktor-baseurl-util:+")
   testImplementation("io.kotest:kotest-assertions-core:+")
   testImplementation("io.kotest:kotest-runner-junit5:+")
