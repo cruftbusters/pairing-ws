@@ -81,3 +81,8 @@ tasks.test {
   useJUnitPlatform()
   systemProperty("baseUrl", System.getProperty("baseUrl"))
 }
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_16
+  targetCompatibility = JavaVersion.VERSION_16
+}
