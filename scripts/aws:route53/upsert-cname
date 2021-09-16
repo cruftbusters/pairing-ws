@@ -1,3 +1,4 @@
+value=$(scripts/aws:cloudfront/get-distribution | jq .Distribution.DomainName -r)
 aws route53 change-resource-record-sets \
   --hosted-zone-id Z2RH2FZB1VIOO8 \
   --change-batch "`cat <<EOF
@@ -11,7 +12,7 @@ aws route53 change-resource-record-sets \
         "TTL": 300,
         "ResourceRecords": [
           {
-            "Value": "$1"
+            "Value": "$value"
           }
         ]
       }
