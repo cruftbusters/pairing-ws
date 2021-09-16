@@ -1,0 +1,12 @@
+[Unit]
+Description=pairing-ws
+
+[Service]
+ExecStart=/usr/bin/java -jar /home/arctair/pairing-ws/build/libs/pairing-ws.jar -port=8080
+StandardOutput=file:/home/arctair/pairing-ws/application.log
+StandardError=file:/home/arctair/pairing-ws/error.log
+Type=simple
+WorkingDirectory=/home/arctair/pairing-ws
+
+[Install]
+WantedBy=multi-user.target

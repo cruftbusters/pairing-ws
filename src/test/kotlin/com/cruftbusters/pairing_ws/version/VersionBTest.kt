@@ -1,6 +1,6 @@
-package com.painkillergis.ktor_starter.version
+package com.cruftbusters.pairing_ws.version
 
-import com.painkillergis.ktor_starter.BFunSpec
+import com.cruftbusters.pairing_ws.BFunSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.string.shouldMatch
 import io.ktor.client.call.*

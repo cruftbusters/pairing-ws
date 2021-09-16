@@ -1,4 +1,4 @@
-# ktor-starter
+# pairing-ws
 ## Development
 ### Prerequisites
 1. Java 11
@@ -17,11 +17,11 @@ The app will be started locally on port 8080. It will block the terminal from fu
 ```sh
 ./gradlew clean shadowJar
 ```
-A jarfile named `ktor-starter.jar` will be placed in `build/libs`
+A jarfile named `pairing-ws.jar` will be placed in `build/libs`
 
 ### Running a jarfile
 ```sh
-$ java -jar build/libs/ktor-starter.jar
+$ java -jar build/libs/pairing-ws.jar
 $ curl -s localhost:8080/version
 {"version":"probably the version"}
 ```

@@ -1,5 +1,5 @@
 #!/bin/zsh -l
 
-if [ ! -d ktor-starter ]; then
-  git clone git@github.com:painkillergis/ktor-starter.git
+if [ ! -d pairing-ws ]; then
+  git clone git@github.com:cruftbusters/pairing-ws.git
 fi

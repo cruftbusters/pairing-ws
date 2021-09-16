@@ -1,7 +1,7 @@
-package com.painkillergis.ktor_starter
+package com.cruftbusters.pairing_ws
 
-import com.painkillergis.ktor_starter.version.VersionService
-import com.painkillergis.ktor_starter.version.versionController
+import com.cruftbusters.pairing_ws.version.VersionService
+import com.cruftbusters.pairing_ws.version.versionController
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.jackson.*

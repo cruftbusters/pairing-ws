@@ -1,4 +1,4 @@
-package com.painkillergis.ktor_starter
+package com.cruftbusters.pairing_ws
 
 import io.kotest.core.listeners.ProjectListener
 import io.kotest.core.spec.AutoScan

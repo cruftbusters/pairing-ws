@@ -6,14 +6,14 @@ plugins {
   kotlin("jvm") version "1.5.21"
 }
 
-group = "com.painkillergis"
+group = "com.cruftbusters"
 version = ProcessBuilder("sh", "-c", "git rev-list --count HEAD")
   .start()
   .apply { waitFor() }
   .inputStream.bufferedReader().readText().trim()
 
 application {
-  mainClass.set("com.painkillergis.ktor_starter.ApplicationKt")
+  mainClass.set("com.cruftbusters.pairing_ws.ApplicationKt")
 }
 
 repositories {

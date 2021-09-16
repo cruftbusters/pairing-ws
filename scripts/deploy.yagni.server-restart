@@ -1,4 +1,4 @@
 #!/bin/zsh -l
 systemctl daemon-reload --user
-systemctl enable ktor-starter --user
-systemctl restart ktor-starter --user
+systemctl enable pairing-ws --user
+systemctl restart pairing-ws --user

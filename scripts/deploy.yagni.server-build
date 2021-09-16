@@ -1,5 +1,5 @@
 #!/bin/zsh -l
 
-cd /home/arctair/ktor-starter
+cd /home/arctair/pairing-ws
 git pull
 ./gradlew clean shadowJar

@@ -1,7 +1,7 @@
-package com.painkillergis.ktor_starter.version
+package com.cruftbusters.pairing_ws.version
 
 import com.cruftbusters.ktor_baseurl_util.withEmbeddedServer
-import com.painkillergis.ktor_starter.globalModules
+import com.cruftbusters.pairing_ws.globalModules
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import io.ktor.client.call.*

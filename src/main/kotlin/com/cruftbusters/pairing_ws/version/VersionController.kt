@@ -1,4 +1,4 @@
-package com.painkillergis.ktor_starter.version
+package com.cruftbusters.pairing_ws.version
 
 import io.ktor.application.*
 import io.ktor.response.*
