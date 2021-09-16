@@ -41,7 +41,7 @@ $ curl -s localhost:8081/version
 
 #### Against yagni
 ```sh
-./gradlew clean test -DbaseUrl=http://yagni:8080
+./gradlew clean test -DbaseUrl=http://yagni:8085
 ```
 
 ## Updating dependencies

@@ -2,4 +2,4 @@ rsync -u scripts/pairing-ws.service yagni:.config/systemd/user/pairing-ws.servic
 ssh yagni -T < scripts/deploy.yagni.server-init
 ssh yagni -T < scripts/deploy.yagni.server-build
 ssh yagni -T < scripts/deploy.yagni.server-restart
-until curl -s yagni:8080/version; do sleep 1 ; done
+until curl -s yagni:8085/version; do sleep 1 ; done
