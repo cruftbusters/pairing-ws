@@ -1,0 +1,21 @@
+aws route53 change-resource-record-sets \
+  --hosted-zone-id ZJNO7PK9MRXJK \
+  --change-batch "`cat <<EOF
+{
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "minecraft.arctair.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "$1"
+          }
+        ]
+      }
+    }
+  ]
+}
+EOF`"
