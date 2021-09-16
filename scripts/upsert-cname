@@ -1,0 +1,21 @@
+aws route53 change-resource-record-sets \
+  --hosted-zone-id Z2RH2FZB1VIOO8 \
+  --change-batch "`cat <<EOF
+{
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "pairing-ws.cruftbusters.com",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "$1"
+          }
+        ]
+      }
+    }
+  ]
+}
+EOF`"
