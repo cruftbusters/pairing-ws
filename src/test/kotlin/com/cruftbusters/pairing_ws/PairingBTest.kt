@@ -12,7 +12,7 @@ class PairingBTest : BFunSpec({
       (incoming.receive() as Frame.Text).readText() shouldBe "pong"
     }
   }
-  test("have a conversation") {
+  test("have conversations") {
     wsClient.webSocket("/chat") {
       val first = this
       wsClient.webSocket("/chat") {
@@ -21,6 +21,13 @@ class PairingBTest : BFunSpec({
         (second.incoming.receive() as Frame.Text).readText() shouldBe "hello second from first"
         second.send(Frame.Text("hello first from second"))
         (first.incoming.receive() as Frame.Text).readText() shouldBe "hello first from second"
+      }
+      wsClient.webSocket("/chat") {
+        val third = this
+        first.send(Frame.Text("hello third from first"))
+        (third.incoming.receive() as Frame.Text).readText() shouldBe "hello third from first"
+        third.send(Frame.Text("hello first from third"))
+        (first.incoming.receive() as Frame.Text).readText() shouldBe "hello first from third"
       }
     }
   }

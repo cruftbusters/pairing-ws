@@ -41,7 +41,7 @@ abstract class BFunSpec(val body: FunSpec.() -> Unit) : FunSpec({
 
     val wsClient = HttpClient {
       defaultRequest { setBaseUrl(wsBaseUrl) }
-      install(WebSockets)
+      WebSockets { }
     }
 
     object ServerStart : io.kotest.core.listeners.TestListener {
