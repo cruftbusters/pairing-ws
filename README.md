@@ -41,7 +41,16 @@ $ curl -s localhost:8081/version
 
 #### Against yagni
 ```sh
-./gradlew clean test -DbaseUrl=http://yagni:8085
+./gradlew clean test \
+  -DbaseUrl=http://yagni:8085 \
+  -DwsBaseUrl=ws://yagni:8085
+```
+
+#### Against pairing-ws.cruftbusters.com
+```sh
+./gradlew clean test \
+  -DbaseUrl=https://pairing-ws.cruftbusters.com \
+  -DwsBaseUrl=wss://pairing-ws.cruftbusters.com
 ```
 
 ## Updating dependencies
