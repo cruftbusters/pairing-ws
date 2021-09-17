@@ -26,7 +26,7 @@ fun Application.chatController() {
           when (frame) {
             is Frame.Text -> webSockets
               .filter { it.index != index }
-              .forEach { it.session.send(frame) }
+              .forEach { it.session.send(frame.copy()) }
             else -> throw RuntimeException("unknown frame type")
           }
         }

@@ -19,15 +19,17 @@ class PairingBTest : BFunSpec({
         val second = this
         first.send(Frame.Text("hello second from first"))
         (second.incoming.receive() as Frame.Text).readText() shouldBe "hello second from first"
+        wsClient.webSocket("/chat") {
+          val third = this
+          first.send(Frame.Text("hello second,third from first"))
+          (second.incoming.receive() as Frame.Text).readText() shouldBe "hello second,third from first"
+          (third.incoming.receive() as Frame.Text).readText() shouldBe "hello second,third from first"
+          third.send(Frame.Text("hello first,second from third"))
+          (first.incoming.receive() as Frame.Text).readText() shouldBe "hello first,second from third"
+          (second.incoming.receive() as Frame.Text).readText() shouldBe "hello first,second from third"
+        }
         second.send(Frame.Text("hello first from second"))
         (first.incoming.receive() as Frame.Text).readText() shouldBe "hello first from second"
-      }
-      wsClient.webSocket("/chat") {
-        val third = this
-        first.send(Frame.Text("hello third from first"))
-        (third.incoming.receive() as Frame.Text).readText() shouldBe "hello third from first"
-        third.send(Frame.Text("hello first from third"))
-        (first.incoming.receive() as Frame.Text).readText() shouldBe "hello first from third"
       }
     }
   }
