@@ -1,0 +1,10 @@
+#!/bin/zsh
+container="`cat scripts/aws:cloudfront/distribution.json`"
+
+etag="`echo $container | jq .ETag -r`"
+distributionConfig="`echo $container | jq .Distribution.DistributionConfig`"
+
+aws cloudfront update-distribution \
+  --id "`cat scripts/aws:cloudfront/distribution-id`" \
+  --distribution-config="$distributionConfig" \
+  --if-match "$etag" | jq > scripts/aws:cloudfront/distribution.json

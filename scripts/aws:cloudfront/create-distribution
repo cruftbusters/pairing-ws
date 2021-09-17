@@ -1,7 +1,7 @@
 #!/bin/zsh
 distributionConfig=$(jq "
-.CallerReference=\"`uuidgen`\"" \
-  scripts/aws:cloudfront/distribution-config.json)
+.Distribution.DistributionConfig|.CallerReference=\"`uuidgen`\"" \
+  scripts/aws:cloudfront/distribution.json)
 aws cloudfront create-distribution \
-  --distribution-config file://<(echo $distributionConfig) | \
+  --distribution-config "$distributionConfig" | \
   jq .Distribution.Id -r | tr -d '\n' > scripts/aws:cloudfront/distribution-id

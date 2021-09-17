@@ -1,0 +1,144 @@
+{
+  "ETag": "EXDYERD6QQV8C",
+  "Distribution": {
+    "Id": "E27BRXQL82LGNS",
+    "ARN": "arn:aws:cloudfront::552879364626:distribution/E27BRXQL82LGNS",
+    "Status": "InProgress",
+    "LastModifiedTime": "2021-09-17T04:21:20.150Z",
+    "InProgressInvalidationBatches": 0,
+    "DomainName": "d1a3jt5rsn76y5.cloudfront.net",
+    "ActiveTrustedSigners": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "ActiveTrustedKeyGroups": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "DistributionConfig": {
+      "CallerReference": "d2336300-7127-4a99-8ca9-277f048b7b02",
+      "Aliases": {
+        "Quantity": 1,
+        "Items": [
+          "pairing-ws.cruftbusters.com"
+        ]
+      },
+      "DefaultRootObject": "index.html",
+      "Origins": {
+        "Quantity": 1,
+        "Items": [
+          {
+            "Id": "yagni-tunnel",
+            "DomainName": "c460-184-105-52-168.ngrok.io",
+            "OriginPath": "",
+            "CustomHeaders": {
+              "Quantity": 1,
+              "Items": [
+                {
+                  "HeaderName": "Sec-WebSocket-Accept",
+                  "HeaderValue": "*"
+                }
+              ]
+            },
+            "CustomOriginConfig": {
+              "HTTPPort": 80,
+              "HTTPSPort": 443,
+              "OriginProtocolPolicy": "https-only",
+              "OriginSslProtocols": {
+                "Quantity": 3,
+                "Items": [
+                  "TLSv1",
+                  "TLSv1.1",
+                  "TLSv1.2"
+                ]
+              },
+              "OriginReadTimeout": 30,
+              "OriginKeepaliveTimeout": 5
+            },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": {
+              "Enabled": false
+            }
+          }
+        ]
+      },
+      "OriginGroups": {
+        "Quantity": 0
+      },
+      "DefaultCacheBehavior": {
+        "TargetOriginId": "yagni-tunnel",
+        "TrustedSigners": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "TrustedKeyGroups": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "AllowedMethods": {
+          "Quantity": 3,
+          "Items": [
+            "HEAD",
+            "GET",
+            "OPTIONS"
+          ],
+          "CachedMethods": {
+            "Quantity": 3,
+            "Items": [
+              "HEAD",
+              "GET",
+              "OPTIONS"
+            ]
+          }
+        },
+        "SmoothStreaming": false,
+        "Compress": true,
+        "LambdaFunctionAssociations": {
+          "Quantity": 0
+        },
+        "FieldLevelEncryptionId": "",
+        "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+        "OriginRequestPolicyId": "33eba025-c23a-4333-bac6-1f537bdc898d"
+      },
+      "CacheBehaviors": {
+        "Quantity": 0
+      },
+      "CustomErrorResponses": {
+        "Quantity": 0
+      },
+      "Comment": "",
+      "Logging": {
+        "Enabled": false,
+        "IncludeCookies": false,
+        "Bucket": "",
+        "Prefix": ""
+      },
+      "PriceClass": "PriceClass_All",
+      "Enabled": true,
+      "ViewerCertificate": {
+        "ACMCertificateArn": "arn:aws:acm:us-east-1:552879364626:certificate/a22592bf-9325-45f0-947f-55ed4dd0ffdd",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021",
+        "Certificate": "arn:aws:acm:us-east-1:552879364626:certificate/a22592bf-9325-45f0-947f-55ed4dd0ffdd",
+        "CertificateSource": "acm"
+      },
+      "Restrictions": {
+        "GeoRestriction": {
+          "RestrictionType": "none",
+          "Quantity": 0
+        }
+      },
+      "WebACLId": "",
+      "HttpVersion": "http2",
+      "IsIPV6Enabled": true
+    },
+    "AliasICPRecordals": [
+      {
+        "CNAME": "pairing-ws.cruftbusters.com",
+        "ICPRecordalStatus": "APPROVED"
+      }
+    ]
+  }
+}
