@@ -49,11 +49,15 @@ class PairingBTest : BFunSpec({
       val id = startChannel.read()
       wsClient.webSocket("/session/$id") {
         val joinChannel = TextChannel(this)
-        startChannel.send("hello join from start")
-        joinChannel.read() shouldBe "hello join from start"
+        "hello join from start".let { text ->
+          startChannel.send(text)
+          joinChannel.read() shouldBe text
+        }
 
-        joinChannel.send("hello start from join")
-        startChannel.read() shouldBe "hello start from join"
+        "hello start from join".let { text ->
+          joinChannel.send(text)
+          startChannel.read() shouldBe text
+        }
       }
     }
   }
