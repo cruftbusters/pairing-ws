@@ -16,6 +16,7 @@ fun Application.globalModules() {
 fun Application.controllers() {
   chatController()
   pingController()
+  startJoinController()
   versionController(
     VersionService(),
   )
